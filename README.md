@@ -19,4 +19,4 @@ El punto 5 de este trabajo consiste en agregarle la funcion de local storge a la
 - Herrera Victor Fernando
 
 ### Para probar el proyecto
-solo deben dirigirse al siguiente link :  
+solo deben dirigirse al siguiente link :  https://tpreactpunto5.netlify.app/
