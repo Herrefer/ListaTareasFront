@@ -1,0 +1,14 @@
+body{
+  background-color: bisque;
+  background-image: linear-gradient(160deg, bisque 0%, rgb(255, 175, 78) 100% );
+}
+
+#root{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.mainPage{
+  flex-grow: 1;
+}
