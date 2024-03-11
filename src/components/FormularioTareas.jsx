@@ -4,7 +4,7 @@ import ListaDeTareas from "./ListaDeTareas";
 import { useState, useEffect } from "react";
 
 const FormularioTareas = () => {
-  const [tarea, setTarea] = useState("");
+  const [tarea, setTarea] = useState('');
   const tareasLocalStorage = JSON.parse(localStorage.getItem("keyTareas")) || [];
   const [tareas, setTareas] = useState(tareasLocalStorage);
 
@@ -15,7 +15,7 @@ const FormularioTareas = () => {
   function handleSubmit(e) {
     e.preventDefault();
     setTareas([...tareas, tarea]);
-    setTarea("");
+    e.target.reset();
   }
 
   const borrarTarea = (nombreTarea) => {
