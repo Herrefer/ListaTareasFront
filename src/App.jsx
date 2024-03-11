@@ -3,6 +3,7 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Footer from "./components/Footer";
 import FormularioTareas from "./components/FormularioTareas";
+import './helpers/queries'
 
 function App() {
   return (
