@@ -1,0 +1,12 @@
+{
+    "tareas":[
+        {
+            "id":"1",
+            "nombreTarea":"Tarea número 1"
+        },
+        {
+            "id":"2",
+            "nombreTarea":"Tarea número 2"
+        }
+    ]
+}
