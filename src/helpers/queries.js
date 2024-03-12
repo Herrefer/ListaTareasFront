@@ -8,6 +8,8 @@ export const leerTareasAPI = async () => {
     const listaTareas = await respuesta.json();
     console.log(respuesta);
     console.log(listaTareas);
-    return listaTareas
-  } catch (error) {}
+    return listaTareas;
+  } catch (error) {
+    console.log('hubo un error en la solicitud');
+  }
 };

@@ -5,13 +5,24 @@ import { useState, useEffect } from "react";
 import { leerTareasAPI } from "../helpers/queries";
 
 const FormularioTareas = () => {
-  const [tarea, setTarea] = useState('');
-  const tareasLocalStorage = JSON.parse(localStorage.getItem("keyTareas")) || [];
+  const [tarea, setTarea] = useState("");
+  const tareasLocalStorage =
+    JSON.parse(localStorage.getItem("keyTareas")) || [];
   const [tareas, setTareas] = useState([]);
 
   useEffect(() => {
-    leerTareasAPI();
+    consultarAPI();
   }, []);
+
+  const consultarAPI = async () => {
+    try {
+      const respuesta = await leerTareasAPI();
+      setTareas(respuesta);
+      console.log(respuesta);
+    } catch (error) {
+      console.log("ocurrió un error en la solicitud");
+    }
+  };
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -40,7 +51,7 @@ const FormularioTareas = () => {
             maxLength={80}
             onChange={(e) => setTarea(e.target.value)}
           />
-          <Button variant="info" className="ms-2" type="submit">
+          <Button variant="success" className="ms-2" type="submit">
             Agregar
           </Button>
         </Form.Group>
