@@ -1,14 +1,15 @@
 import { Button, ListGroup } from "react-bootstrap";
+import { borrarTareaAPI } from "../helpers/queries";
 
-const ItemTarea = ({ nombreTarea, borrarTareaProps }) => {
+const ItemTarea = ({ nombreTarea, idTarea, borrarTareaProps}) => {
   return (
     <div>
       <ListGroup.Item className="d-flex justify-content-between">
         <div> {nombreTarea}</div>
         <div>
           <Button
+            onClick={() => borrarTareaProps(idTarea)}
             className="btn btn-danger me-3"
-            onClick={() => borrarTareaProps(nombreTarea)}
           >
             Borrar
           </Button>

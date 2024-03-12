@@ -1,36 +1,12 @@
 {
   "tareas": [
     {
-      "id": "1",
-      "nombreTarea": "Tarea número 1"
+      "id": "23dc",
+      "nombreTarea": "tarea 1"
     },
     {
-      "id": "2",
-      "nombreTarea": "Tarea número 2"
-    },
-    {
-      "id": "c977",
-      "nombreTarea": "Tarea 3"
-    },
-    {
-      "id": "6162",
-      "nombreTarea": "Tarea 4"
-    },
-    {
-      "id": "d97e",
-      "nombreTarea": "Tarea 5"
-    },
-    {
-      "id": "e6e2",
-      "nombreTarea": "Tarea 6"
-    },
-    {
-      "id": "47e4",
-      "nombreTarea": "Tarea 43"
-    },
-    {
-      "id": "7fbb",
-      "nombreTarea": "tarea 5"
+      "id": "aecc",
+      "nombreTarea": "tarea4"
     }
   ]
 }

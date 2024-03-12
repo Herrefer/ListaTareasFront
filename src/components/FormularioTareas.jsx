@@ -2,12 +2,14 @@ import { Button } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import ListaDeTareas from "./ListaDeTareas";
 import { useState, useEffect } from "react";
-import { crearTareaAPI, leerTareasAPI } from "../helpers/queries";
+import {
+  borrarTareaAPI,
+  crearTareaAPI,
+  leerTareasAPI,
+} from "../helpers/queries";
 
 const FormularioTareas = () => {
   const [nombreTarea, setNombreTarea] = useState("");
-  const tareasLocalStorage =
-    JSON.parse(localStorage.getItem("keyTareas")) || [];
   const [tareas, setTareas] = useState([]);
 
   useEffect(() => {
@@ -24,20 +26,28 @@ const FormularioTareas = () => {
     }
   };
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    const objetoNombreTarea = {nombreTarea};
-    console.log(objetoNombreTarea)
-    crearTareaAPI(objetoNombreTarea);
-    console.log(leerTareasAPI())
+  const handleSubmit = async (e) => {
+    try {
+      e.preventDefault();
+      const objetoNombreTarea = { nombreTarea };
+      console.log(objetoNombreTarea);
+      const objetoTareaNueva = await crearTareaAPI(objetoNombreTarea);
+      console.log(objetoTareaNueva);
+      const dato = await objetoTareaNueva.json();
+      setTareas([...tareas, dato]);
+      console.log(dato);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
-  const borrarTarea = (nombreTareaBorrar) => {
-     const tareasFiltradas = tareas.filter(
-       (elemento) => elemento !== nombreTareaBorrar
-     );
-     setTareas(tareasFiltradas);
-   };
+  const borrarTarea = (id) => {
+    borrarTareaAPI(id);
+    const tareasFiltradas = tareas.filter((elemento) => elemento.id !== id);
+    console.log(tareasFiltradas);
+    setTareas(tareasFiltradas);
+    console.log(tareas)
+  };
 
   return (
     <section>
@@ -53,7 +63,7 @@ const FormularioTareas = () => {
             maxLength={80}
             required
             onChange={(e) => setNombreTarea(e.target.value)}
-            value= {nombreTarea}
+            value={nombreTarea}
           />
           <Button variant="success" className="ms-2" type="submit">
             Agregar
