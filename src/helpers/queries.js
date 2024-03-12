@@ -10,6 +10,22 @@ export const leerTareasAPI = async () => {
     console.log(listaTareas);
     return listaTareas;
   } catch (error) {
-    console.log('hubo un error en la solicitud');
+    console.log("hubo un error en la solicitud");
+  }
+};
+
+export const crearTareaAPI = async (tareaNueva) => {
+  try {
+    const respuesta = await fetch(urlTareas, {
+      method: "POST",
+      headers: {
+        "Content-Type":"application/json",
+      },
+      body: JSON.stringify(tareaNueva),
+    });
+    console.log(respuesta);
+    return respuesta;
+  } catch (error) {
+    console.log(error);
   }
 };

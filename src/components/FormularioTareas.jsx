@@ -2,10 +2,10 @@ import { Button } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import ListaDeTareas from "./ListaDeTareas";
 import { useState, useEffect } from "react";
-import { leerTareasAPI } from "../helpers/queries";
+import { crearTareaAPI, leerTareasAPI } from "../helpers/queries";
 
 const FormularioTareas = () => {
-  const [tarea, setTarea] = useState("");
+  const [nombreTarea, setNombreTarea] = useState("");
   const tareasLocalStorage =
     JSON.parse(localStorage.getItem("keyTareas")) || [];
   const [tareas, setTareas] = useState([]);
@@ -26,16 +26,18 @@ const FormularioTareas = () => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    setTareas([...tareas, tarea]);
-    e.target.reset();
-  }
-
-  const borrarTarea = (nombreTarea) => {
-    const tareasFiltradas = tareas.filter(
-      (elemento) => elemento !== nombreTarea
-    );
-    setTareas(tareasFiltradas);
+    const objetoNombreTarea = {nombreTarea};
+    console.log(objetoNombreTarea)
+    crearTareaAPI(objetoNombreTarea);
+    console.log(leerTareasAPI())
   };
+
+  const borrarTarea = (nombreTareaBorrar) => {
+     const tareasFiltradas = tareas.filter(
+       (elemento) => elemento !== nombreTareaBorrar
+     );
+     setTareas(tareasFiltradas);
+   };
 
   return (
     <section>
@@ -46,10 +48,12 @@ const FormularioTareas = () => {
         >
           <Form.Control
             type="text"
-            placeholder="Tarea a agregar"
+            placeholder="Escriba la tarea que desea agregar"
             minLength={3}
             maxLength={80}
-            onChange={(e) => setTarea(e.target.value)}
+            required
+            onChange={(e) => setNombreTarea(e.target.value)}
+            value= {nombreTarea}
           />
           <Button variant="success" className="ms-2" type="submit">
             Agregar
