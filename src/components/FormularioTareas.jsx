@@ -36,6 +36,7 @@ const FormularioTareas = () => {
       const dato = await objetoTareaNueva.json();
       setTareas([...tareas, dato]);
       console.log(dato);
+      setNombreTarea("")
     } catch (error) {
       console.log(error);
     }
