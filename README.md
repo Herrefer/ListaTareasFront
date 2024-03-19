@@ -1,4 +1,4 @@
-# ⚛ Lista de Tareas (Frontend) ⚛
+# ⚛ Lista de Tareas (Frontend + Backend) ⚛
 
 La página es simple, consiste en una aplicacion con CRUD en la que podemos crear, eliminar y editar tareas, a la vez que estas serán listadas en cada momento.
 
@@ -16,4 +16,4 @@ La página es simple, consiste en una aplicacion con CRUD en la que podemos crea
 - Herrera Victor Fernando
 
 ### Para probar el proyecto
-solo deben dirigirse al siguiente link :  
+solo deben dirigirse al siguiente link :  agendastareas.netlify.app
