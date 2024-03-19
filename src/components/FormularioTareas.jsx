@@ -20,9 +20,8 @@ const FormularioTareas = () => {
     try {
       const respuesta = await leerTareasAPI();
       setTareas(respuesta);
-      console.log(respuesta);
     } catch (error) {
-      console.log("ocurrió un error en la solicitud");
+      alert(error);
     }
   };
 
@@ -30,24 +29,19 @@ const FormularioTareas = () => {
     try {
       e.preventDefault();
       const objetoNombreTarea = { nombreTarea };
-      console.log(objetoNombreTarea);
       const objetoTareaNueva = await crearTareaAPI(objetoNombreTarea);
-      console.log(objetoTareaNueva);
       const dato = await objetoTareaNueva.json();
       setTareas([...tareas, dato]);
-      console.log(dato);
       setNombreTarea("");
     } catch (error) {
-      console.log(error);
+      alert(error);
     }
   };
 
   const borrarTarea = (id) => {
     borrarTareaAPI(id);
     const tareasFiltradas = tareas.filter((elemento) => elemento._id !== id);
-    console.log(tareasFiltradas);
     setTareas(tareasFiltradas);
-    console.log(tareas);
   };
 
   return (

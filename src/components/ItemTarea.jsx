@@ -12,9 +12,7 @@ const ItemTarea = ({ nombreTareaProps, idTarea, borrarTareaProps}) => {
   const [nombreTarea, setNombreTarea] = useState("");
 
   const handleSubmit = async (e) => {
-    e.preventDeault();
     const objetoTareaEditada = {nombreTarea};
-    console.log(objetoTareaEditada);
     await editarTareaAPI(objetoTareaEditada,idTarea);
   }
 
