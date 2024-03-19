@@ -1,9 +1,6 @@
-# ⚛ Trabajo Practico React + Vite ⚛
-## Punto 5
+# ⚛ Lista de Tareas (Frontend) ⚛
 
-El trabajo practico en general consiste en resolver ejercicios, de simples a complejos, basados en React y Vite, asi tambien como en el manejo de conceptos como componente, ciclo de vida de componente, local storage, estado, eventos, etc.
-
-El punto 5 de este trabajo consiste en agregarle la funcion de local storge a la misma agenda del punto 4
+La página es simple, consiste en una aplicacion con CRUD en la que podemos crear, eliminar y editar tareas, a la vez que estas serán listadas en cada momento.
 
 ### Herramientas utilizadas 🛠           
 - React                                 
@@ -19,4 +16,4 @@ El punto 5 de este trabajo consiste en agregarle la funcion de local storge a la
 - Herrera Victor Fernando
 
 ### Para probar el proyecto
-solo deben dirigirse al siguiente link :  https://tpreactpunto5.netlify.app/
+solo deben dirigirse al siguiente link :  
