@@ -36,7 +36,7 @@ const FormularioTareas = () => {
       const dato = await objetoTareaNueva.json();
       setTareas([...tareas, dato]);
       console.log(dato);
-      setNombreTarea("")
+      setNombreTarea("");
     } catch (error) {
       console.log(error);
     }
@@ -47,7 +47,7 @@ const FormularioTareas = () => {
     const tareasFiltradas = tareas.filter((elemento) => elemento._id !== id);
     console.log(tareasFiltradas);
     setTareas(tareasFiltradas);
-    console.log(tareas)
+    console.log(tareas);
   };
 
   return (
