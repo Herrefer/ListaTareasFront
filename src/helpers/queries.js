@@ -41,3 +41,19 @@ export const borrarTareaAPI = async (id) => {
     console.log(error);
   }
 };
+
+export const editarTareaAPI = async (tareaEditada,id) =>{
+  try{
+    const respuesta = await fetch(`${urlTareas}/${id}`,{
+      method: "PUT",
+      headers : {
+        "Content-Type" : "application/json",
+      },
+      body: JSON.stringify(tareaEditada),
+    });
+    console.log(respuesta);
+    return respuesta;
+  }catch (error){
+    console.log(error);
+  }
+}

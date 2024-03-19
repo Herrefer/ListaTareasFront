@@ -1,12 +1,20 @@
 {
   "tareas": [
     {
-      "id": "aecc",
-      "nombreTarea": "tarea4"
+      "id": "ca5b",
+      "nombreTarea": "Tarea 1"
     },
     {
-      "id": "785b",
-      "nombreTarea": "Terminar el CRUD de Json-server"
+      "id": "9117",
+      "nombreTarea": "Tarea 2"
+    },
+    {
+      "id": "7fe3",
+      "nombreTarea": "Tarea 3"
+    },
+    {
+      "id": "1e66",
+      "nombreTarea": "Tarea 4"
     }
   ]
 }

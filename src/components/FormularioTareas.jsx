@@ -44,7 +44,7 @@ const FormularioTareas = () => {
 
   const borrarTarea = (id) => {
     borrarTareaAPI(id);
-    const tareasFiltradas = tareas.filter((elemento) => elemento.id !== id);
+    const tareasFiltradas = tareas.filter((elemento) => elemento._id !== id);
     console.log(tareasFiltradas);
     setTareas(tareasFiltradas);
     console.log(tareas)

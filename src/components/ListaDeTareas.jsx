@@ -5,7 +5,7 @@ const ListaDeTareas = ({tareasProps, borrarTareaProps}) => {
   return (
     <ListGroup>
       {
-       tareasProps.map((elemento) => <ItemTarea key={elemento.id} nombreTarea={elemento.nombreTarea} idTarea={elemento.id} borrarTareaProps={borrarTareaProps}></ItemTarea>)
+       tareasProps.map((elemento) => <ItemTarea key={elemento._id} nombreTareaProps={elemento.nombreTarea} idTarea={elemento._id} borrarTareaProps={borrarTareaProps}></ItemTarea>)
       }
     </ListGroup>
   );
