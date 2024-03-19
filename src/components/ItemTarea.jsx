@@ -1,6 +1,6 @@
 import { Button, ListGroup, Modal, Form} from "react-bootstrap";
 import { useState } from "react";
-import { editarTareaAPI, leerTareasAPI} from "../helpers/queries";
+import { editarTareaAPI} from "../helpers/queries";
 
 
 const ItemTarea = ({ nombreTareaProps, idTarea, borrarTareaProps}) => {
@@ -14,7 +14,6 @@ const ItemTarea = ({ nombreTareaProps, idTarea, borrarTareaProps}) => {
   const handleSubmit = async (e) => {
     const objetoTareaEditada = {nombreTarea};
     await editarTareaAPI(objetoTareaEditada,idTarea);
-    leerTareasAPI();
   }
 
   return (

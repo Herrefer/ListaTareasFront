@@ -48,6 +48,6 @@ export const editarTareaAPI = async (tareaEditada,id) =>{
     });
     return respuesta;
   }catch (error){
-    alert(error);
+    console.log(error);
   }
 }
